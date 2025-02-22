@@ -180,11 +180,19 @@ Exercise 12: FizzBuzz with arrays
 Complete Exercise 12 in the space below:
 */
 
-console.log('Exercise 12 Results:')
-console.log('  fizz:', fizz)
-console.log('  buzz:', buzz)
-console.log('  fizzbuzz:', fizzbuzz)
+const fizz = []
+const buzz = []
+const fizzbuzz = []
 
+nums.forEach((num) => {
+  if (num % 5 === 0) {
+    buzz.push(num)
+  } else if (num % 3 === 0) {
+    fizz.push(num)
+  } else if (num % 3 === 0 && num % 5 === 0) {
+    fizzbuzz.push(num)
+  }
+})
 /*
 Exercise 13: Retrieve the Last Array
 
@@ -204,6 +212,8 @@ const numArrays = [
   [7, 81, 90]
 ]
 
+const numList = numArrays[numArrays.length - 1]
+
 console.log('Exercise 13 result:', numList)
 
 /*
@@ -216,6 +226,8 @@ Exercise 14: Accessing within nested arrays
 
 Complete Exercise 14 in the space below:
 */
+
+const num = numArrays[2][1]
 
 console.log('Exercise 14 result:', num)
 
@@ -231,5 +243,13 @@ Hint: Be sure to declare and initialize the total variable before the iterations
 
 Complete Exercise 15 in the space below:
 */
+
+let total = 0
+
+numArrays.forEach((nestedArray) => {
+  nestedArray.forEach((num) => {
+    total += num
+  })
+})
 
 console.log('Exercise 15 result:\n', total)
